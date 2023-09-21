@@ -1,16 +1,19 @@
-ALGORITHM palindrome
+FUNCTION palindrome(i:INTEGER,j:INTEGER,word:STRING) : STRING
 VAR
     set_declarations
 BEGIN
+    a:=i
+    b:=j
     read(word)
-    // the process
-    2 counters : i,j
-    i: counter for the beginning of the word
-    j: for the end of the word
-    i advances with (i+1)
-    j retreats with (j-1)
-    until i+1=j-1
-    if the words until i+1=j-1 are the same then that word is a palindrome
-    // the stop case
-    either an empty word or it composes of a single character   
+    IF (word==null || a=b) THEN
+        return true
+    ELSE
+IF (word[i]==word[j]) THEN
+    return palindrome(a++,b--)
+ELSE
+    IF (word[i]!=word[j]) THEN
+        return false
+    END_IF
+END_IF
+    END_IF
 END
